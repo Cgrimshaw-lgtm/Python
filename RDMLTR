@@ -1,0 +1,24 @@
+import random
+import string
+
+def randomize_letter(target_letter):
+    # Ensure the target_letter is a single alphabet character
+    if len(target_letter) != 1 or target_letter not in string.ascii_letters:
+        print("Please enter a valid single letter.")
+        return
+
+    count = 0
+    random_letter = ''
+    
+    while random_letter != target_letter:
+        # Generate a random letter (lowercase or uppercase)
+        random_letter = random.choice(string.ascii_letters)
+        count += 1
+        print(f"Attempt {count}: {random_letter}")
+        
+    print(f"Target letter '{target_letter}' found after {count} attempts!")
+
+# User input for target letter
+target_letter = input("Enter the target letter: ")
+
+randomize_letter(target_letter)
